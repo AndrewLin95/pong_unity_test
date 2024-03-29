@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Ball ball;
+    public Text playerScoreText;
+    public Text computerScoreText;
+
     private int _playerScore;
     private int _computerScore;
 
@@ -10,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         _playerScore++;
 
+        this.playerScoreText.text = _playerScore.ToString();
         this.ball.ResetPosition();
     }
 
@@ -17,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         _computerScore++;
 
+        this.computerScoreText.text = _computerScore.ToString();
         this.ball.ResetPosition();
     }
 }
