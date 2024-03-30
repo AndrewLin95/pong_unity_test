@@ -13,9 +13,10 @@ public class Ball : MonoBehaviour
     private void Start()
     {
         ResetPosition();
+        AddStartingForce();
     }
 
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         // x = speed the ball goes left and right
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
@@ -37,7 +38,5 @@ public class Ball : MonoBehaviour
     {
         _rigidbody.position = Vector2.zero;
         _rigidbody.velocity = Vector2.zero;
-
-        AddStartingForce();
     }
 }
